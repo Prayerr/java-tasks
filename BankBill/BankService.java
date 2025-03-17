@@ -24,7 +24,6 @@ public class BankService {
             conn = DatabaseConnection.getConnection();
             conn.setAutoCommit(false);
 
-            // Проверяем баланс отправителя
             String checkBalanceSql = "SELECT balance FROM clients WHERE account_number = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(checkBalanceSql)) {
                 pstmt.setString(1, fromAccount);
@@ -34,7 +33,6 @@ public class BankService {
                 }
             }
 
-            // Списываем деньги
             String updateFromSql = "UPDATE clients SET balance = balance - ? WHERE account_number = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(updateFromSql)) {
                 pstmt.setDouble(1, amount);
@@ -42,7 +40,6 @@ public class BankService {
                 pstmt.executeUpdate();
             }
 
-            // Зачисляем деньги
             String updateToSql = "UPDATE clients SET balance = balance + ? WHERE account_number = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(updateToSql)) {
                 pstmt.setDouble(1, amount);
@@ -50,7 +47,6 @@ public class BankService {
                 pstmt.executeUpdate();
             }
 
-            // Записываем транзакцию
             String transactionSql = "INSERT INTO transactions (from_account, to_account, amount, transaction_type) VALUES (?, ?, ?, 'TRANSFER')";
             try (PreparedStatement pstmt = conn.prepareStatement(transactionSql)) {
                 pstmt.setString(1, fromAccount);
@@ -79,7 +75,6 @@ public class BankService {
             conn = DatabaseConnection.getConnection();
             conn.setAutoCommit(false);
 
-            // Получаем информацию о клиенте
             String getClientSql = "SELECT * FROM clients WHERE account_number = ?";
             Client client;
             try (PreparedStatement pstmt = conn.prepareStatement(getClientSql)) {
@@ -97,15 +92,12 @@ public class BankService {
                 client.setWelcomeBonusUsed(rs.getBoolean("welcome_bonus_used"));
             }
 
-            // Проверяем баланс
             if (client.getBalance() < amount) {
                 throw new SQLException("Недостаточно средств на счете");
             }
 
-            // Рассчитываем кешбек
             double cashback = client.calculateCashback(amount);
 
-            // Списываем деньги
             String updateBalanceSql = "UPDATE clients SET balance = balance - ? WHERE account_number = ?";
             try (PreparedStatement pstmt = conn.prepareStatement(updateBalanceSql)) {
                 pstmt.setDouble(1, amount);
@@ -113,7 +105,6 @@ public class BankService {
                 pstmt.executeUpdate();
             }
 
-            // Если это первая оплата услуги, начисляем приветственный бонус
             if (!client.isWelcomeBonusUsed()) {
                 String updateBonusSql = "UPDATE clients SET balance = balance + ?, welcome_bonus_used = true WHERE account_number = ?";
                 try (PreparedStatement pstmt = conn.prepareStatement(updateBonusSql)) {
@@ -123,7 +114,6 @@ public class BankService {
                 }
             }
 
-            // Начисляем кешбек
             if (cashback > 0) {
                 String updateCashbackSql = "UPDATE clients SET balance = balance + ? WHERE account_number = ?";
                 try (PreparedStatement pstmt = conn.prepareStatement(updateCashbackSql)) {
@@ -133,7 +123,6 @@ public class BankService {
                 }
             }
 
-            // Записываем транзакцию
             String transactionSql = "INSERT INTO transactions (from_account, amount, transaction_type) VALUES (?, ?, 'SERVICE_PAYMENT')";
             try (PreparedStatement pstmt = conn.prepareStatement(transactionSql)) {
                 pstmt.setString(1, accountNumber);
