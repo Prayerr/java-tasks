@@ -11,7 +11,6 @@ public class DatabaseConnection {
 
     static {
         try {
-            // Добавляем путь к драйверу в classpath
             File driverFile = new File(DRIVER_PATH);
             if (driverFile.exists()) {
                 java.net.URLClassLoader classLoader = new java.net.URLClassLoader(
