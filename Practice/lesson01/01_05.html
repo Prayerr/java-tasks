@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Использование переменной, часть II</title>
+    <link href="../_css/site.css" rel="stylesheet" />
+    <script>
+      const firstName = prompt("Введите ваше имя:");
+      const lastName = prompt("Введите вашу фамилию:");
+      const age = prompt("Введите ваш возраст:");
+      const birthPlace = prompt("Введите место рождения:");
+      const address = prompt("Введите адрес проживания:");
+    </script>
+  </head>
+
+  <body>
+    <header>JAVASCRIPT <span class="amp">:</span> Lesson 1.5</header>
+    <div class="wrapper">
+      <div class="content">
+        <div class="main">
+          <h1>Использование переменной, часть II</h1>
+          <script>
+            document.write(
+              "<h2>Добро пожаловать, " + firstName + " " + lastName + "!</h2>"
+            );
+            document.write("<p>Информация о пользователе:</p>");
+            document.write("<p>Возраст: " + age + "</p>");
+            document.write("<p>Место рождения: " + birthPlace + "</p>");
+            document.write("<p>Адрес проживания: " + address + "</p>");
+          </script>
+        </div>
+      </div>
+      <footer>
+        <p>JavaScript - Lesson 1.5</p>
+      </footer>
+    </div>
+  </body>
+</html>

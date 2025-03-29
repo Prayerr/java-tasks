@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Использование условных выражений</title>
+    <link href="../_css/site.css" rel="stylesheet" />
+    <script>
+      const number = prompt("Какое ваше счастливое число?");
+      let message;
+
+      if (number == 7) {
+        message = "Это мое тоже счастливое число";
+      } else if (number == 13 || number == 24) {
+        message = "Это несчастливое число =((";
+      } else {
+        message = "Для вас " + number + " является счастливым числом";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>JAVASCRIPT <span class="amp">:</span> Lesson2.1</header>
+      <div class="content">
+        <div class="main">
+          <h1>Использование условных выражений</h1>
+          <script>
+            document.write("<p>" + message + "</p>");
+          </script>
+        </div>
+      </div>
+      <footer>
+        <p>JavaScript - Lesson2.1</p>
+      </footer>
+    </div>
+  </body>
+</html>

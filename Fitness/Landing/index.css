@@ -1,0 +1,302 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-bg: #6093ff;
+}
+
+.header {
+  width: 100%;
+  height: 75px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--navbar-bg);
+}
+
+.header__logo {
+  width: auto;
+  height: 50px;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header styles */
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.header__logo {
+  height: 50px;
+}
+
+.header__nav-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.header__nav-list-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header__nav-list-item a:hover {
+  color: #ff4d4d;
+}
+
+/* Section common styles */
+.section {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #333;
+}
+
+/* About section */
+.about {
+  margin-top: 80px;
+  background-color: #f9f9f9;
+}
+
+.about__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about__text {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Trainers section */
+.trainers__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.trainer-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.trainer-card:hover {
+  transform: translateY(-5px);
+}
+
+.trainer-card__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.trainer-card__name {
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.trainer-card__specialization {
+  padding: 0 20px 20px;
+  text-align: center;
+  color: #666;
+}
+
+/* Prices section */
+.prices {
+  background-color: #f9f9f9;
+}
+
+.prices__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.price-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+}
+
+.price-card--popular {
+  border: 2px solid #ff4d4d;
+  position: relative;
+}
+
+.price-card--popular::after {
+  content: "Популярный";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 0 10px 0 10px;
+}
+
+.price-card__title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.price-card__price {
+  font-size: 2rem;
+  color: #ff4d4d;
+  margin-bottom: 20px;
+}
+
+.price-card__features {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.price-card__features li {
+  margin-bottom: 10px;
+  color: #666;
+}
+
+/* Contacts section */
+.contacts__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.contacts__info h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.contacts__info p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.contacts__info a {
+  color: #ff4d4d;
+  text-decoration: none;
+}
+
+.contacts__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacts__form input {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #ff3333;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: white;
+  padding: 30px 0;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__logo {
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header__nav-list {
+    gap: 15px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contacts__content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}

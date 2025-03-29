@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Использование функций</title>
+    <link href="../_css/site.css" rel="stylesheet" />
+    <script>
+      function printToday() {
+        var today = new Date();
+        document.write(today.toDateString());
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>JAVASCRIPT <span class="amp">:</span> Lesson2.2</header>
+      <div class="content">
+        <div class="main">
+          <h1>Использование функций</h1>
+          <p>
+            Сегодня
+            <strong
+              ><script>
+                printToday();
+              </script></strong
+            >
+          </p>
+        </div>
+      </div>
+      <footer>
+        <p>JavaScript - Lesson2.2</p>
+      </footer>
+    </div>
+  </body>
+</html>

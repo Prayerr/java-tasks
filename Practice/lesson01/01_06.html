@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Создание и использование массивов</title>
+    <link href="../_css/site.css" rel="stylesheet" />
+    <script>
+      const movies = [
+        "Властелин колец",
+        "Матрица",
+        "Титаник",
+        "Звездные войны",
+        "Побег из Шоушенка",
+        "Крестный отец",
+        "Темный рыцарь",
+        "Парк юрского периода",
+        "Властелин колец: Возвращение короля",
+        "Форрест Гамп",
+      ];
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>JAVASCRIPT <span class="amp">:</span> Lesson 1.6</header>
+      <div class="content">
+        <div class="main">
+          <h1>Создание и использование массивов</h1>
+          <script>
+            document.write("<p>Первый фильм: " + movies[0] + "</p>");
+            document.write("<p>Пятый фильм: " + movies[4] + "</p>");
+            document.write(
+              "<p>Последний фильм: " + movies[movies.length - 1] + "</p>"
+            );
+          </script>
+        </div>
+      </div>
+      <footer>
+        <p>JavaScript - Lesson 1.6</p>
+      </footer>
+    </div>
+  </body>
+</html>

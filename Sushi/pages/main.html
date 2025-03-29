@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <script src="index.js" defer></script>
+    <title>SushiShot</title>
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <nav class="nav-menu">
+          <ul>
+            <li><a href="index.html">Каталог</a></li>
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="lk.html">Личный кабинет</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="title-container">
+        <div class="contact-data">
+          <span>+7(999)123-45-67</span>
+          <span>sales@insales.ru</span>
+        </div>
+        <div class="title-data">
+          <span class="title">SushiShot</span>
+          <span>Вкусите прекрасных блюд</span>
+        </div>
+      </div>
+      <div class="food-menu">
+        <ul>
+          <li><a href="#">РОЛЛЫ</a></li>
+          <li><a href="#">СЕТЫ</a></li>
+          <li><a href="#">СУШИ</a></li>
+          <li><a href="#">САШИМИ</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section id="catalog">
+        <div class="sort">
+          <div class="btn-group">
+            <button class="btn">Размер</button>
+            <button class="btn">Вес</button>
+            <button class="btn">Состав</button>
+            <button class="btn">Цена</button>
+          </div>
+          <select class="select-list">
+            <option selected>Сортировать</option>
+            <option value="1">Цена</option>
+            <option value="2">Вес</option>
+            <option value="3">Размер</option>
+          </select>
+        </div>
+        <div class="catalog-cards">
+          <div class="catalog-card">
+            <div class="card-img">
+              <div class="hit">хит!</div>
+              <img src="/images/01.jpg" alt="Суши" />
+            </div>
+            <h5>Маки-ролл с лососем</h5>
+            <p>рис, лосось</p>
+            <div class="price">
+              <span>250руб</span>
+              <button class="card-btn"><a href="item.html">Купить</a></button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <div class="card-img">
+              <div class="hit">хит!</div>
+              <img src="/images/02.jpg" alt="Суши" />
+            </div>
+            <h5>Маки-ролл с тунцом</h5>
+            <p>рис, тунец</p>
+            <div class="price">
+              <span>250руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <img src="/images/03.jpg" alt="Суши" />
+            <h5>Гункан вакаме</h5>
+            <span class="disc"
+              ><p>рис, водоросли вакаме, ореховый соус-60г.</p></span
+            >
+            <div class="price">
+              <span>90руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <img src="/images/04.jpg" alt="Суши" />
+            <h5>Гункан с красной икрой</h5>
+            <p>рис, икра красная-45г.</p>
+            <div class="price">
+              <span>160руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <img src="/images/05.jpg" alt="Суши" />
+            <h5>Гункан с креветкой</h5>
+            <p>рис, креветка, Тобико, острый соус-50г.</p>
+            <div class="price">
+              <span>130руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-cards">
+          <div class="catalog-card">
+            <div class="card-img">
+              <div class="hit">хит!</div>
+              <img src="/images/06.jpg" alt="Суши" />
+            </div>
+            <h5>Гункан лососем</h5>
+            <p>рис, лосось, Тобико, острый соус-50г</p>
+            <div class="price">
+              <span>120руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <img src="/images/06.jpg" alt="Суши" />
+            <h5>Гункан с лососем гриль</h5>
+            <p>рис, лосось гриль, Тобико, острый соус-55г.</p>
+            <div class="price">
+              <span>130руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <div class="card-img">
+              <div class="hit">хит!</div>
+              <img src="/images/08.jpg" alt="Суши" />
+            </div>
+            <h5>Гункан с тунцом</h5>
+            <p>рис, тунец, Тобико, острый соус-50г.</p>
+            <div class="price">
+              <span>130руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <img src="/images/09.jpg" alt="Суши" />
+            <h5>Гункан с угрём</h5>
+            <p>рис, угорь, Тобико, унаги-50г.</p>
+            <div class="price">
+              <span>130руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+
+          <div class="catalog-card">
+            <img src="/images/10.jpg" alt="Суши" />
+            <h5>Гункан тобико</h5>
+            <p>рис, Тобико-50г.</p>
+            <div class="price">
+              <span>120руб</span>
+              <button class="card-btn">Купить</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer-main">
+      <div class="footer-contact-data">
+        <span>+7(999)123-45-67</span>
+        <span>sales@insales.ru</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Политика конфиденциальности и оферта</a>
+        <ul>
+          <li><a href="#">Пользовательское соглашение</a></li>
+          <li><a href="#">Условия обмена и возврата</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Обратная связь</a></li>
+          <li><a href="#">Оплата</a></li>
+          <li><a href="#">Контакты</a></li>
+          <li><a href="#">Доставка</a></li>
+        </ul>
+      </div>
+      <div class="social-medias">
+        <div class="img-border">
+          <i class="bx bxl-twitter"></i>
+        </div>
+        <div class="img-border">
+          <i class="bx bxl-vk"></i>
+        </div>
+        <div class="img-border">
+          <i class="bx bxl-facebook"></i>
+        </div>
+        <div class="img-border">
+          <i class="bx bxl-instagram-alt"></i>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

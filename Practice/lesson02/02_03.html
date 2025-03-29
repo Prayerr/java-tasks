@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Использование функций</title>
+    <link href="../_css/site.css" rel="stylesheet" />
+    <script>
+      function withoutNDS() {
+        const sum = prompt("Введите сумму за товар:");
+        const nds = sum * 0.18;
+        const sumWithoutNDS = sum - nds;
+        document.write(sumWithoutNDS.toFixed(2) + " руб.");
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>JAVASCRIPT <span class="amp">:</span> Lesson2.3</header>
+      <div class="content">
+        <div class="main">
+          <h1>Использование функций (НДС)</h1>
+          <p>
+            Сумма без ндс:
+            <strong
+              ><script>
+                withoutNDS();
+              </script></strong
+            >
+          </p>
+        </div>
+      </div>
+      <footer>
+        <p>JavaScript - Lesson2.3</p>
+      </footer>
+    </div>
+  </body>
+</html>

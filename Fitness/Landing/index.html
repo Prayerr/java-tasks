@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Fitness Pro - Ваш путь к совершенству</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <img
+          src="./assets/logo.png"
+          alt="Fitness Pro Logo"
+          class="header__logo"
+        />
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-list-item"><a href="#about">О клубе</a></li>
+            <li class="header__nav-list-item">
+              <a href="#trainers">Тренеры</a>
+            </li>
+            <li class="header__nav-list-item"><a href="#prices">Цены</a></li>
+            <li class="header__nav-list-item">
+              <a href="#contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="about" class="about section">
+        <div class="container">
+          <h1 class="section-title">Добро пожаловать в Fitness Pro</h1>
+          <div class="about__content">
+            <p class="about__text">
+              Fitness Pro - это современный фитнес-клуб, где каждый найдет свой
+              путь к здоровому образу жизни. Мы предлагаем передовое
+              оборудование, профессиональных тренеров и индивидуальный подход к
+              каждому клиенту.
+            </p>
+            <p class="about__text">
+              Наша миссия - помочь вам достичь ваших фитнес-целей в комфортной и
+              мотивирующей атмосфере. Присоединяйтесь к нашему клубу и станьте
+              частью успешного сообщества!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="trainers" class="trainers section">
+        <div class="container">
+          <h2 class="section-title">Наши тренеры</h2>
+          <div class="trainers__grid">
+            <div class="trainer-card">
+              <img
+                src="./assets/trainer1.jpg"
+                alt="Александр Петров"
+                class="trainer-card__image"
+              />
+              <h3 class="trainer-card__name">Александр Петров</h3>
+              <p class="trainer-card__specialization">Силовой тренинг</p>
+            </div>
+            <div class="trainer-card">
+              <img
+                src="./assets/trainer2.jpg"
+                alt="Мария Иванова"
+                class="trainer-card__image"
+              />
+              <h3 class="trainer-card__name">Мария Иванова</h3>
+              <p class="trainer-card__specialization">Йога, Пилатес</p>
+            </div>
+            <div class="trainer-card">
+              <img
+                src="./assets/trainer3.jpg"
+                alt="Дмитрий Соколов"
+                class="trainer-card__image"
+              />
+              <h3 class="trainer-card__name">Дмитрий Соколов</h3>
+              <p class="trainer-card__specialization">Кроссфит</p>
+            </div>
+            <div class="trainer-card">
+              <img
+                src="./assets/trainer4.jpg"
+                alt="Иван Иванов"
+                class="trainer-card__image"
+              />
+              <h3 class="trainer-card__name">Иван Иванов</h3>
+              <p class="trainer-card__specialization">Функциональный тренинг</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="prices" class="prices section">
+        <div class="container">
+          <h2 class="section-title">Цены</h2>
+          <div class="prices__grid">
+            <div class="price-card">
+              <h3 class="price-card__title">Базовый</h3>
+              <p class="price-card__price">3000₽/мес</p>
+              <ul class="price-card__features">
+                <li>Посещение тренажерного зала</li>
+                <li>Групповые занятия</li>
+                <li>Шкафчик в раздевалке</li>
+              </ul>
+            </div>
+            <div class="price-card price-card--popular">
+              <h3 class="price-card__title">Оптимальный</h3>
+              <p class="price-card__price">5000₽/мес</p>
+              <ul class="price-card__features">
+                <li>Все включено в тариф "Базовый"</li>
+                <li>2 персональные тренировки</li>
+                <li>Составление программы питания</li>
+              </ul>
+            </div>
+            <div class="price-card">
+              <h3 class="price-card__title">Премиум</h3>
+              <p class="price-card__price">8000₽/мес</p>
+              <ul class="price-card__features">
+                <li>Все включено в тариф "Оптимальный"</li>
+                <li>4 персональные тренировки</li>
+                <li>СПА-зона без ограничений</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" class="contacts section">
+        <div class="container">
+          <h2 class="section-title">Контакты</h2>
+          <div class="contacts__content">
+            <div class="contacts__info">
+              <h3>Адрес</h3>
+              <p>ул. Спортивная, 123</p>
+              <h3>Телефон</h3>
+              <p><a href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+              <h3>Email</h3>
+              <p><a href="mailto:info@fitnesspro.ru">info@fitnesspro.ru</a></p>
+              <h3>Режим работы</h3>
+              <p>Пн-Пт: 7:00 - 23:00<br />Сб-Вс: 9:00 - 22:00</p>
+            </div>
+            <form class="contacts__form">
+              <h3>Оставить заявку</h3>
+              <input type="text" placeholder="Ваше имя" required />
+              <input type="tel" placeholder="Телефон" required />
+              <input type="email" placeholder="Email" required />
+              <button type="submit" class="button">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <img
+            src="./assets/logo.png"
+            alt="Fitness Pro Logo"
+            class="footer__logo"
+          />
+          <p class="footer__copyright">
+            © 2024 Fitness Pro. Все права защищены.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
