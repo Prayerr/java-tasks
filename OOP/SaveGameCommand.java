@@ -9,7 +9,6 @@ public class SaveGameCommand implements Command {
     public void execute() {
         System.out.println("Сохранение игры...");
         gameState.setGameSaved(true);
-        // Здесь будет логика сохранения игры
     }
 
     @Override

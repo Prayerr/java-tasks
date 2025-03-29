@@ -6,7 +6,6 @@ import java.util.List;
 import java.time.LocalDateTime;
 
 public class DatabaseManager {
-    // Методы для работы с тренерами
     public static void addTrainer(String name, String specialization) throws SQLException {
         String sql = "INSERT INTO trainers (name, specialization) VALUES (?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
@@ -35,7 +34,6 @@ public class DatabaseManager {
     }
     
     public static void deleteTrainer(int id) throws SQLException {
-        // Сначала удаляем все тренировки, связанные с этим тренером
         String deleteTrainingsSql = "DELETE FROM trainings WHERE trainer_id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(deleteTrainingsSql)) {
@@ -43,7 +41,6 @@ public class DatabaseManager {
             pstmt.executeUpdate();
         }
         
-        // Затем удаляем самого тренера
         String deleteTrainerSql = "DELETE FROM trainers WHERE id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(deleteTrainerSql)) {
@@ -67,7 +64,6 @@ public class DatabaseManager {
         }
     }
     
-    // Методы для работы с клиентами
     public static void addClient(String name, String phone, String email) throws SQLException {
         String sql = "INSERT INTO clients (name, phone, email) VALUES (?, ?, ?)";
         try (Connection conn = DatabaseConnection.getConnection();
@@ -118,7 +114,6 @@ public class DatabaseManager {
         }
     }
     
-    // Методы для работы с тренировками
     public static void addTraining(int trainerId, int clientId, 
                                  LocalDateTime startTime, LocalDateTime endTime, 
                                  String type) throws SQLException {

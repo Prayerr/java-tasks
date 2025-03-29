@@ -8,7 +8,6 @@ public class LoadGameCommand implements Command {
     @Override
     public void execute() {
         System.out.println("Загрузка игры...");
-        // Здесь будет логика загрузки игры
     }
 
     @Override

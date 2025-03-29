@@ -26,13 +26,11 @@ public class EditTrainingDialog extends JDialog {
             List<Trainer> trainers = DatabaseManager.getAllTrainers();
             List<Client> clients = DatabaseManager.getAllClients();
             
-            // Создаем панель с полями
             JPanel panel = new JPanel(new GridLayout(5, 2, 5, 5));
             panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
             
             panel.add(new JLabel("Тренер:"));
             trainerCombo = new JComboBox<>(trainers.toArray(new Trainer[0]));
-            // Устанавливаем выбранного тренера
             for (int i = 0; i < trainers.size(); i++) {
                 if (trainers.get(i).getName().equals(trainerName)) {
                     trainerCombo.setSelectedIndex(i);
@@ -43,7 +41,6 @@ public class EditTrainingDialog extends JDialog {
             
             panel.add(new JLabel("Клиент:"));
             clientCombo = new JComboBox<>(clients.toArray(new Client[0]));
-            // Устанавливаем выбранного клиента
             for (int i = 0; i < clients.size(); i++) {
                 if (clients.get(i).getName().equals(clientName)) {
                     clientCombo.setSelectedIndex(i);
@@ -75,7 +72,6 @@ public class EditTrainingDialog extends JDialog {
             typeCombo.setSelectedItem(type);
             panel.add(typeCombo);
             
-            // Создаем кнопки
             JButton okButton = new JButton("OK");
             JButton cancelButton = new JButton("Отмена");
             
@@ -95,7 +91,6 @@ public class EditTrainingDialog extends JDialog {
                         endTime.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalTime()
                     );
                     
-                    // Проверяем время
                     LocalTime start = startDateTime.toLocalTime();
                     LocalTime end = endDateTime.toLocalTime();
                     if (start.isBefore(LocalTime.of(9, 0)) || end.isAfter(LocalTime.of(22, 0))) {
@@ -106,7 +101,6 @@ public class EditTrainingDialog extends JDialog {
                         return;
                     }
                     
-                    // Проверяем доступность времени
                     Trainer selectedTrainer = (Trainer) trainerCombo.getSelectedItem();
                     if (!DatabaseManager.isTimeSlotAvailable(
                             selectedTrainer.getId(), startDateTime, endDateTime)) {
@@ -117,7 +111,6 @@ public class EditTrainingDialog extends JDialog {
                         return;
                     }
                     
-                    // Обновляем тренировку
                     DatabaseManager.updateTraining(
                         trainingId,
                         selectedTrainer.getId(),
@@ -139,17 +132,14 @@ public class EditTrainingDialog extends JDialog {
             
             cancelButton.addActionListener(e -> dispose());
             
-            // Добавляем кнопки на панель
             JPanel buttonPanel = new JPanel();
             buttonPanel.add(okButton);
             buttonPanel.add(cancelButton);
             
-            // Добавляем все на форму
             setLayout(new BorderLayout());
             add(panel, BorderLayout.CENTER);
             add(buttonPanel, BorderLayout.SOUTH);
             
-            // Настраиваем диалог
             pack();
             setLocationRelativeTo(parent);
         } catch (SQLException ex) {

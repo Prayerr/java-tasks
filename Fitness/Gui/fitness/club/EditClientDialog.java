@@ -15,7 +15,6 @@ public class EditClientDialog extends JDialog {
         super(parent, "Редактировать клиента", true);
         this.clientId = id;
         
-        // Создаем панель с полями
         JPanel panel = new JPanel(new GridLayout(3, 2, 5, 5));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
@@ -31,7 +30,6 @@ public class EditClientDialog extends JDialog {
         emailField = new JTextField(email);
         panel.add(emailField);
         
-        // Создаем кнопки
         JButton okButton = new JButton("OK");
         JButton cancelButton = new JButton("Отмена");
         
@@ -64,17 +62,14 @@ public class EditClientDialog extends JDialog {
         
         cancelButton.addActionListener(e -> dispose());
         
-        // Добавляем кнопки на панель
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(okButton);
         buttonPanel.add(cancelButton);
         
-        // Добавляем все на форму
         setLayout(new BorderLayout());
         add(panel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
         
-        // Настраиваем диалог
         pack();
         setLocationRelativeTo(parent);
     }

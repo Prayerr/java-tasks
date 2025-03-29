@@ -20,7 +20,6 @@ public class Training {
         this.type = type;
     }
     
-    // Геттеры и сеттеры
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
     public int getTrainerId() { return trainerId; }

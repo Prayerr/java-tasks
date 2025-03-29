@@ -12,7 +12,6 @@ public class AddTrainerDialog extends JDialog {
     public AddTrainerDialog(JFrame parent) {
         super(parent, "Добавить тренера", true);
         
-        // Создаем панель с полями
         JPanel panel = new JPanel(new GridLayout(2, 2, 5, 5));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         
@@ -24,7 +23,6 @@ public class AddTrainerDialog extends JDialog {
         specializationField = new JTextField();
         panel.add(specializationField);
         
-        // Создаем кнопки
         JButton okButton = new JButton("OK");
         JButton cancelButton = new JButton("Отмена");
         
@@ -55,17 +53,14 @@ public class AddTrainerDialog extends JDialog {
         
         cancelButton.addActionListener(e -> dispose());
         
-        // Добавляем кнопки на панель
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(okButton);
         buttonPanel.add(cancelButton);
         
-        // Добавляем все на форму
         setLayout(new BorderLayout());
         add(panel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
         
-        // Настраиваем диалог
         pack();
         setLocationRelativeTo(parent);
     }

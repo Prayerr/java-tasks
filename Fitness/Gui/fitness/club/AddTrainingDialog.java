@@ -32,7 +32,6 @@ public class AddTrainingDialog extends JDialog {
                 return;
             }
             
-            // Создаем панель с полями
             JPanel panel = new JPanel(new GridLayout(5, 2, 5, 5));
             panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
             
@@ -66,7 +65,6 @@ public class AddTrainingDialog extends JDialog {
             typeCombo = new JComboBox<>(new String[]{"Персональная", "Групповая"});
             panel.add(typeCombo);
             
-            // Создаем кнопки
             JButton okButton = new JButton("OK");
             JButton cancelButton = new JButton("Отмена");
             
@@ -86,7 +84,6 @@ public class AddTrainingDialog extends JDialog {
                         endTime.toInstant().atZone(java.time.ZoneId.systemDefault()).toLocalTime()
                     );
                     
-                    // Проверяем время
                     LocalTime start = startDateTime.toLocalTime();
                     LocalTime end = endDateTime.toLocalTime();
                     if (start.isBefore(LocalTime.of(9, 0)) || end.isAfter(LocalTime.of(22, 0))) {
@@ -97,7 +94,6 @@ public class AddTrainingDialog extends JDialog {
                         return;
                     }
                     
-                    // Проверяем доступность времени
                     Trainer selectedTrainer = (Trainer) trainerCombo.getSelectedItem();
                     if (!DatabaseManager.isTimeSlotAvailable(
                             selectedTrainer.getId(), startDateTime, endDateTime)) {
@@ -108,7 +104,6 @@ public class AddTrainingDialog extends JDialog {
                         return;
                     }
                     
-                    // Добавляем тренировку
                     DatabaseManager.addTraining(
                         selectedTrainer.getId(),
                         ((Client) clientCombo.getSelectedItem()).getId(),
@@ -129,17 +124,14 @@ public class AddTrainingDialog extends JDialog {
             
             cancelButton.addActionListener(e -> dispose());
             
-            // Добавляем кнопки на панель
             JPanel buttonPanel = new JPanel();
             buttonPanel.add(okButton);
             buttonPanel.add(cancelButton);
             
-            // Добавляем все на форму
             setLayout(new BorderLayout());
             add(panel, BorderLayout.CENTER);
             add(buttonPanel, BorderLayout.SOUTH);
             
-            // Настраиваем диалог
             pack();
             setLocationRelativeTo(parent);
         } catch (SQLException ex) {
